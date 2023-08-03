@@ -10,5 +10,5 @@ inputs:
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: az-ml-compute-cluster
-experiment_name: diabetes-data-example
+experiment_name: diabetes-development-example
 description: Train a classification model on diabetes data using a registered dataset as input.
