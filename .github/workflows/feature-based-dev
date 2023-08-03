@@ -1,0 +1,14 @@
+name: Pull Request Workflow
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Placeholder
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add Placeholder Text
+        run: |
+          echo "Will add code checks here in next challenge"
