@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: Placeholder
+    name: Placeholder Job
     runs-on: ubuntu-latest
 
     steps:
