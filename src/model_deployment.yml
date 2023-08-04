@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: sklearn-deployment
+endpoint_name: my-diabetes-endpoint
+model:
+  name: az-ml-diabetes-model
+  version: 1
+  path: azureml:diabetes-prediction:1
+  type: mlflow_model
+instance_type: Standard_DS3_v2
+instance_count: 1
