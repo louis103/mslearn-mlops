@@ -18,4 +18,4 @@ jobs:
           creds: ${{secrets.AZURE_CREDENTIALS}}
       - name: Trigger Model Deployment
         run: |
-          az ml online-deployment create --name diabetes-deployment --endpoint my-diabetes-endpoint -f src/model_deployment.yml --resource-group az-ml-resource --workspace-name az-ml-workspace-actions --all-traffic
+          az ml online-deployment create --name diabetes-deployment --endpoint my-diabetes-endpoint -f src/model_deployment.yml --all-traffic
