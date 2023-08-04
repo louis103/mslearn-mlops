@@ -1,5 +1,24 @@
+name: Deploying model to a managed endpoint.
 
+on:
+  workflow_dispatch:
 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Deployment
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@main
+      - name: Install az ml extension
+        run: az extension add -n ml -y
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+      - name: Trigger Model Deployment
+        run: |
+          az ml online-deployment create --name diabetes-deployment --endpoint my-diabetes-endpoint -f src/model_deployment.yml --resource-group az-ml-resource --workspace-name az-ml-workspace-actions --all-traffic
 
 
 
