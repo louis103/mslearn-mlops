@@ -16,6 +16,9 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{secrets.AZURE_CREDENTIALS}}
+      - name: Create online model endpoint
+        run: |
+          az ml online-endpoint create --name my-diabetes-endpoint -f src/create-endpoint.yml --resource-group az-ml-resource --workspace-name az-ml-workspace-actions
       - name: Trigger Model Deployment
         run: |
-          az ml online-deployment create --name diabetes-deployment --endpoint my-diabetes-endpoint -f src/model_deployment.yml --all-traffic
+          az ml online-deployment create --name diabetes-deployment --endpoint my-diabetes-endpoint -f src/model_deployment.yml --all-traffic --resource-group az-ml-resource --workspace-name az-ml-workspace-actions
